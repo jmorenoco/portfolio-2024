@@ -16,10 +16,8 @@ import {
 
 import { MailIcon, BriefcaseIcon, ArrowDownIcon } from '@/components/UtilIcons'
 
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
+import logoFreelancer from '@/images/logos/freelancer.png'
 import logoPai from '@/images/logos/pai.jpeg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
 import portraitImage from '@/images/portrait.jpg'
 
 function SocialLink({
@@ -39,6 +37,7 @@ function Resume() {
   let resume: Array<Role> = [
     {
       company: 'Pai Suscripciones',
+      location: 'Cuernavaca, Morelos. México',
       title: 'Frontend developer',
       logo: logoPai,
       start: '05/2021',
@@ -46,27 +45,27 @@ function Resume() {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+      achievements: [
+        'Migrated the main project’s styles from SASS to Tailwind CSS. This migration resulted in faster compilation, improved performance, and an optimized user experience.',
+        'Identified and corrected multiple inconsistencies between Figma prototypes and implemented designs. These actions improved visual cohesion and facilitated better understanding for the end user.',
+        'Reviewed and optimized the semantic structure of several projects, significantly improving the websites’ accessibility and SEO.',
+        'Integrated Stripe Elements into several client projects, facilitating secure and efficient payment processes.',
+        'Managed implementations using Laravel, InertiaJS, and VueJS, and effectively integrated data consumed from REST APIs.',
+      ],
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
-    },
-    {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Freelancer',
+      location: 'Bogotá, Colombia',
+      title: 'Frontend developer',
+      logo: logoFreelancer,
+      start: '04/2020',
+      end: '05/2021',
+      achievements: [
+        'Built app workflow and designed foundations and each component of the same.',
+        'Implemented the application with with React JS and Redux',
+        'Generated Backend with NodeJS, Mongoose and Express',
+        'Made complete project about Digital Menu for restaurants. I use stack HTML5, CSS3 and JavaScript. Mobile responsive.',
+      ],
     },
   ]
 
@@ -76,15 +75,21 @@ function Resume() {
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
-      <ol className="mt-6 space-y-4">
+      <ol className="mt-6 space-y-8">
         {resume.map((role, roleIndex) => (
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      <div className="flex justify-end">
+        <Button
+          href="#"
+          variant="primary"
+          className="group mt-6 w-full lg:w-fit"
+        >
+          Download CV
+          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </div>
     </div>
   )
 }
@@ -122,37 +127,38 @@ export default async function Home() {
                 technologies and creating attractive and functional products.
               </p>
             </div>
-
-            <div className="mt-4 flex justify-evenly gap-4 lg:mt-8">
-              <SocialLink
-                href="https://x.com/javandresmoreno"
-                icon={XIcon}
-                target="_blank"
-              />
-              <SocialLink
-                href="https://instagram.com/javandresmoreno"
-                icon={InstagramIcon}
-                target="_blank"
-              />
-              <SocialLink
-                href="https://github.com/javandresmoreno"
-                icon={GitHubIcon}
-                target="_blank"
-              />
-              <SocialLink
-                href="https://www.linkedin.com/in/javandresmoreno"
-                icon={LinkedInIcon}
-                target="_blank"
-              />
+            <div className="flex flex-wrap items-center gap-x-8">
+              <Button
+                href="mailto:hola@javandresmoreno.com"
+                variant="primary"
+                className="group mt-8 w-full lg:w-fit"
+              >
+                <MailIcon className="h-7" />
+                Contact me!
+              </Button>
+              <div className="mt-8 flex w-full justify-evenly gap-4 lg:w-fit lg:justify-start">
+                <SocialLink
+                  href="https://x.com/javandresmoreno"
+                  icon={XIcon}
+                  target="_blank"
+                />
+                <SocialLink
+                  href="https://instagram.com/javandresmoreno"
+                  icon={InstagramIcon}
+                  target="_blank"
+                />
+                <SocialLink
+                  href="https://github.com/javandresmoreno"
+                  icon={GitHubIcon}
+                  target="_blank"
+                />
+                <SocialLink
+                  href="https://www.linkedin.com/in/javandresmoreno"
+                  icon={LinkedInIcon}
+                  target="_blank"
+                />
+              </div>
             </div>
-            <Button
-              href="mailto:hola@javandresmoreno.com"
-              variant="primary"
-              className="group mt-8 w-full"
-            >
-              <MailIcon className="h-7" />
-              Contact me!
-            </Button>
           </div>
         </div>
       </Container>
