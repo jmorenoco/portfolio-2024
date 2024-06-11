@@ -2,3 +2,56 @@
 @import 'tailwindcss/components';
 @import './prism.css';
 @import 'tailwindcss/utilities';
+
+@layer components {
+  /* 
+     ********** Contact form ********* 
+  */
+
+  .contact-form {
+    margin-inline: auto;
+    padding: 1rem;
+    max-width: 800px;
+  }
+
+  .contact-form > * {
+    padding: 1rem;
+    margin: 1.5rem auto;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .contact-form *::placeholder {
+    font-size: 0.9rem;
+  }
+
+  .contact-form textarea {
+    border-radius: 0.5rem;
+    resize: none;
+  }
+
+  .contact-form input[type='submit'] {
+    margin-top: 0;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    text-align: center;
+  }
+
+  .contact-form input[type='submit']:hover {
+    opacity: 0.75;
+  }
+
+  .modal#gracias:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .contact-form-response {
+    padding: 2rem;
+    width: 400px;
+    text-align: center;
+    background-color: #fff;
+  }
+}
