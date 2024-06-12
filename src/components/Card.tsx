@@ -25,9 +25,7 @@ export function Card<T extends React.ElementType = 'div'>({
   let Component = as ?? 'div'
 
   return (
-    <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
-    >
+    <Component className={clsx(className, 'group relative flex flex-col')}>
       {children}
     </Component>
   )
@@ -39,7 +37,7 @@ Card.Link = function CardLink({
 }: React.ComponentPropsWithoutRef<typeof Link>) {
   return (
     <>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
+      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 border border-zinc-300 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:border-zinc-800 dark:bg-zinc-800/50" />
       <Link {...props}>
         <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -105,7 +103,7 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500',
+        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 ',
         decorate && 'pl-3.5',
       )}
       {...props}

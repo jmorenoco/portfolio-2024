@@ -43,15 +43,34 @@
     opacity: 0.75;
   }
 
-  .modal#gracias:target {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
   .contact-form-response {
     padding: 2rem;
     width: 400px;
     text-align: center;
     background-color: #fff;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #555;
+    display: grid;
+    place-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.8s;
+  }
+
+  .modal#gracias:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-content {
+    position: relative;
   }
 }

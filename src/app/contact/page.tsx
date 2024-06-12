@@ -35,13 +35,13 @@ export default function Contact() {
 
       const json = await res.json()
       console.log(json)
-      setResponseMessage('¡Muchas Gracias por tus comentarios!')
+      setResponseMessage('Thank you very much, I will get back to you asap.')
       formRef.current!.reset()
       window.location.hash = '#gracias'
     } catch (err: any) {
       console.error(err)
       const message =
-        err.statusText || 'Ocurrió un error al enviar. Intenta nuevamente.'
+        err.statusText || 'An error has occurred. Please try again later.'
       setResponseMessage(`Error ${err.status} : ${message}`)
     } finally {
       setLoading(false)
@@ -64,7 +64,6 @@ export default function Contact() {
           className="rounded-lg border border-zinc-300 dark:border-zinc-800"
           placeholder="Type your name *"
           title="Name accepts only letters and blanks."
-          pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
           required
           autoComplete="John Doe"
         />
@@ -88,25 +87,24 @@ export default function Contact() {
         <div
           className={`contact-form-loader ${
             loading ? '' : 'hidden'
-          } text-center`}
+          } grid place-content-center`}
         >
           <Loader />
         </div>
         <div className="text-center">
           <Button variant="primary" type="submit">
-            Enviar mensaje
+            Send message
           </Button>
-          {/* <input className="primary" type="submit" value="Enviar Mensaje" /> */}
         </div>
       </form>
       {responseMessage && (
-        <article id="gracias" className="modal">
-          <div className="modal-content">
-            <article className="contact-form-response">
-              <h3 className="text-first-color">{responseMessage}</h3>
-              <span className="icons">😉</span>
-            </article>
-          </div>
+        <article
+          id="gracias"
+          className="mx-auto grid max-w-md place-content-center rounded-lg bg-zinc-200 p-4 dark:bg-zinc-800"
+        >
+          <h3 className="text-center font-bold text-zinc-800 dark:text-zinc-400">
+            {responseMessage} 😉
+          </h3>
         </article>
       )}
     </SimpleLayout>
