@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Role } from '@/app/Role/page'
+import { Role } from '@/components/Role'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
