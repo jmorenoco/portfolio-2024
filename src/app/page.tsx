@@ -1,9 +1,11 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 import { Role } from '@/components/Role'
-
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 
@@ -34,37 +36,37 @@ function SocialLink({
 }
 
 function Resume() {
+  const { t } = useTranslation()
   let resume: Array<Role> = [
     {
-      company: 'Pai Suscripciones',
-      location: 'Cuernavaca, Morelos. México',
-      title: 'Frontend developer',
+      company: t('resume.pai.company'),
+      location: t('resume.pai.location'),
+      title: t('resume.pai.title'),
       logo: logoPai,
       start: '05/2021',
       end: {
-        label: 'Present',
+        label: t('resume.pai.end.label'),
         dateTime: new Date().getFullYear().toString(),
       },
       achievements: [
-        'Migrated the main project’s styles from SASS to Tailwind CSS. This migration resulted in faster compilation, improved performance, and an optimized user experience.',
-        'Identified and corrected multiple inconsistencies between Figma prototypes and implemented designs. These actions improved visual cohesion and facilitated better understanding for the end user.',
-        'Reviewed and optimized the semantic structure of several projects, significantly improving the websites’ accessibility and SEO.',
-        'Integrated Stripe Elements into several client projects, facilitating secure and efficient payment processes.',
-        'Managed implementations using Laravel, InertiaJS, and VueJS, and effectively integrated data consumed from REST APIs.',
+        t('resume.pai.achievements.0'),
+        t('resume.pai.achievements.1'),
+        t('resume.pai.achievements.2'),
+        t('resume.pai.achievements.3'),
       ],
     },
     {
-      company: 'Freelancer',
-      location: 'Bogotá, Colombia',
-      title: 'Frontend developer',
+      company: t('resume.freelancer.company'),
+      location: t('resume.freelancer.location'),
+      title: t('resume.freelancer.title'),
       logo: logoFreelancer,
-      start: '04/2020',
-      end: '05/2021',
+      start: t('resume.freelancer.start'),
+      end: t('resume.freelancer.end'),
       achievements: [
-        'Built app workflow and designed foundations and each component of the same.',
-        'Implemented the application with with React JS and Redux',
-        'Generated Backend with NodeJS, Mongoose and Express',
-        'Made complete project about Digital Menu for restaurants. I use stack HTML5, CSS3 and JavaScript. Mobile responsive.',
+        t('resume.freelancer.achievements.0'),
+        t('resume.freelancer.achievements.1'),
+        t('resume.freelancer.achievements.2'),
+        t('resume.freelancer.achievements.3'),
       ],
     },
   ]
@@ -73,7 +75,7 @@ function Resume() {
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">{t('work.title')}</span>
       </h2>
       <ol className="mt-6 space-y-8">
         {resume.map((role, roleIndex) => (
@@ -87,7 +89,7 @@ function Resume() {
           className="group mt-6 w-full lg:w-fit"
           target="_blank"
         >
-          Check out my resume
+          {t('resume.button')}
           <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
       </div>
@@ -95,7 +97,8 @@ function Resume() {
   )
 }
 
-export default async function Home() {
+export default function Home() {
+  const { t } = useTranslation()  
   return (
     <>
       <Container className="mt-16 sm:mt-32">
@@ -112,20 +115,17 @@ export default async function Home() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-              Hi, I'm Javier Moreno
+              {t('home.title')}
             </h1>
             <h3 className="mt-4 text-2xl font-semibold tracking-tight text-zinc-600 sm:text-3xl dark:text-zinc-300">
-              Frontend developer, amateur cyclist and enthusiastic marathon
-              runner
+              {t('home.subtitle')}
             </h3>
             <div className="mt-6 space-y-2 text-base text-zinc-600 dark:text-zinc-400">
               <p className="text-balance">
-                +3 years of experience building and maintaining responsive web
-                applications, from Bogotá, Colombia.
+                {t('home.description')}
               </p>
               <p className="text-balance">
-                I am a self-taught developer passionate about learning new
-                technologies and creating attractive and functional products.
+                {t('home.description2')}
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-x-8">
@@ -135,7 +135,7 @@ export default async function Home() {
                 className="group mt-8 w-full lg:w-fit"
               >
                 <MailIcon className="h-7" />
-                Contact me!
+                {t('home.contactMe')}
               </Button>
               <div className="mt-8 flex w-full justify-evenly gap-4 lg:w-fit lg:justify-start">
                 <SocialLink

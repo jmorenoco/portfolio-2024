@@ -3,6 +3,9 @@
 import { createContext, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { ThemeProvider, useTheme } from 'next-themes'
+import { I18nextProvider } from 'react-i18next'
+import i18n from '@/lib/i18n'
+
 
 function usePrevious<T>(value: T) {
   let ref = useRef<T>()
@@ -47,8 +50,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <AppContext.Provider value={{ previousPathname }}>
       <ThemeProvider attribute="class" disableTransitionOnChange>
-        <ThemeWatcher />
-        {children}
+        <I18nextProvider i18n={i18n}>
+          <ThemeWatcher />
+          {children}
+        </I18nextProvider>
       </ThemeProvider>
     </AppContext.Provider>
   )

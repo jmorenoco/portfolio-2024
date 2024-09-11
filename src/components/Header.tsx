@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
+import { useTranslation } from 'react-i18next'
 import {
   Popover,
   PopoverButton,
@@ -14,6 +15,7 @@ import {
   TransitionChild,
 } from '@headlessui/react'
 import clsx from 'clsx'
+import LanguageToggle from '@/components/LanguageToggle'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.png'
@@ -98,6 +100,7 @@ function MobileNavItem({
 function MobileNavigation(
   props: React.ComponentPropsWithoutRef<typeof Popover>,
 ) {
+  const { t } = useTranslation()
   return (
     <Popover {...props}>
       <PopoverButton className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
@@ -132,14 +135,14 @@ function MobileNavigation(
                 <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
               </PopoverButton>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
+                {t('navigation.title')}
               </h2>
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/">About</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/contact">Contact</MobileNavItem>
+                <MobileNavItem href="/">{t('navigation.about')}</MobileNavItem>
+                <MobileNavItem href="/projects">{t('navigation.projects')}</MobileNavItem>
+                <MobileNavItem href="/contact">{t('navigation.contact')}</MobileNavItem>
               </ul>
             </nav>
           </PopoverPanel>
@@ -156,8 +159,7 @@ function NavItem({
   href: string
   children: React.ReactNode
 }) {
-  let isActive = usePathname() === href
-
+  let isActive = usePathname() === href 
   return (
     <li>
       <Link
@@ -179,13 +181,17 @@ function NavItem({
 }
 
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+  const { t } = useTranslation()
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/">About</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/contact">Contact</NavItem>
-      </ul>
+      <div className="flex flex-row justify-between items-center gap-4">
+        <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+          <NavItem href="/">{t('navigation.about')}</NavItem>
+          <NavItem href="/projects">{t('navigation.projects')}</NavItem>
+          <NavItem href="/contact">{t('navigation.contact')}</NavItem>
+        </ul>
+        <LanguageToggle />
+      </div>
     </nav>
   )
 }

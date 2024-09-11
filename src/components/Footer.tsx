@@ -1,6 +1,8 @@
+'use client'
 import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
+import { useTranslation } from 'react-i18next'
 
 function NavLink({
   href,
@@ -20,6 +22,7 @@ function NavLink({
 }
 
 export function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className="mt-24 flex-none">
       <ContainerOuter>
@@ -27,12 +30,12 @@ export function Footer() {
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/contact">Contact</NavLink>
+                <NavLink href="/">{t('navigation.about')}</NavLink>
+                <NavLink href="/projects">{t('navigation.projects')}</NavLink>
+                <NavLink href="/contact">{t('navigation.contact')}</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Made with ❤️ by
+                &copy; {new Date().getFullYear()} {t('footer.copyright')}
                 <Link
                   href={'https://x.com/javandresmoreno'}
                   target="_blank"

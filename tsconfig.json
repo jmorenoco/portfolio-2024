@@ -3,6 +3,7 @@
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "types": ["acorn", "json-schema", "mdast", "node", "semver"], 
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
