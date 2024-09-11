@@ -190,7 +190,6 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
           <NavItem href="/projects">{t('navigation.projects')}</NavItem>
           <NavItem href="/contact">{t('navigation.contact')}</NavItem>
         </ul>
-        <LanguageToggle />
       </div>
     </nav>
   )
@@ -273,7 +272,8 @@ export function Header() {
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
               <div className="flex justify-end md:flex-1">
-                <div className="pointer-events-auto">
+                <div className="pointer-events-auto flex gap-2">
+                  <LanguageToggle />
                   <ThemeToggle />
                 </div>
               </div>

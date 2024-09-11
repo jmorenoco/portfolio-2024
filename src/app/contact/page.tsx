@@ -1,21 +1,17 @@
 'use client'
 
 import { useState, useRef, FormEvent } from 'react'
-import { type Metadata } from 'next'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { Button } from '@/components/Button'
 import { Loader } from '@/components/UtilIcons'
+import { useTranslation } from 'react-i18next'
 
-const metadata: Metadata = {
-  title: 'Contact me',
-  description:
-    'Contact me to discuss how we can work together and take your project to the next level.',
-}
 
 export default function Contact() {
   const [loading, setLoading] = useState(false)
   const [responseMessage, setResponseMessage] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
+  const { t } = useTranslation()
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -35,13 +31,13 @@ export default function Contact() {
 
       const json = await res.json()
       console.log(json)
-      setResponseMessage('Thank you very much, I will get back to you asap.')
+      setResponseMessage(t('contact.response'))
       formRef.current!.reset()
       window.location.hash = '#gracias'
     } catch (err: any) {
       console.error(err)
       const message =
-        err.statusText || 'An error has occurred. Please try again later.'
+        err.statusText || t('contact.error')
       setResponseMessage(`Error ${err.status} : ${message}`)
     } finally {
       setLoading(false)
@@ -54,16 +50,16 @@ export default function Contact() {
 
   return (
     <SimpleLayout
-      title="Contact me!"
-      intro="I'd love to discuss how we can work together and take your project to the next level."
+      title={t('contact.title')}
+      intro={t('contact.intro')}
     >
       <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
           className="rounded-lg border border-zinc-300 dark:border-zinc-800"
-          placeholder="Type your name *"
-          title="Name accepts only letters and blanks."
+          placeholder={t('contact.name')}
+          title={t('contact.nameTitle')}
           required
           autoComplete="John Doe"
         />
@@ -71,8 +67,8 @@ export default function Contact() {
           type="email"
           name="email"
           className="rounded-lg border border-zinc-300 dark:border-zinc-800"
-          placeholder="Type your email *"
-          title="wrong email"
+          placeholder={t('contact.email')}
+          title={t('contact.emailTitle')}
           required
           autoComplete="mail@example.com"
         />
@@ -81,7 +77,7 @@ export default function Contact() {
           className="rounded-lg border border-zinc-300 dark:border-zinc-800"
           cols={50}
           rows={10}
-          placeholder="Leave me your comments *"
+          placeholder={t('contact.comments')}
           required
         ></textarea>
         <div
@@ -93,7 +89,7 @@ export default function Contact() {
         </div>
         <div className="text-center">
           <Button variant="primary" type="submit">
-            Send message
+            {t('contact.send')}
           </Button>
         </div>
       </form>
@@ -103,7 +99,7 @@ export default function Contact() {
           className="mx-auto grid max-w-md place-content-center rounded-lg bg-zinc-200 p-4 dark:bg-zinc-800"
         >
           <h3 className="text-center font-bold text-zinc-800 dark:text-zinc-400">
-            {responseMessage} 😉
+            {responseMessage} 😉 
           </h3>
         </article>
       )}

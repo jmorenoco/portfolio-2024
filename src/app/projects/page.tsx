@@ -1,5 +1,7 @@
-import { type Metadata } from 'next'
+'use client'
+
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -9,68 +11,6 @@ import logoArrozPaisaRexton from '@/images/logos/paisita.webp'
 import logoFreelancer from '@/images/logos/freelancer.png'
 import logoPai from '@/images/logos/pai.jpeg'
 import logoCVPlast from '@/images/logos/CV_Logo.png'
-
-const projects = [
-  {
-    name: 'CV Plast S.A.S.',
-    description:
-      'E-commerce project for agribusiness products. NextJS, React, Zustand. Developing.',
-    link: {
-      href: 'https://issuu.com/javandresmoreno/docs/cv_brochure_issuu',
-      label: 'cvplast.com',
-    },
-    logo: logoCVPlast,
-  },
-  {
-    name: 'ZZardin International S.A.S.',
-    description:
-      'E-commerce project developed with the MERN stack, with payment gateway, user login, order display. Developed with NextJS, Redux, Not active.',
-    link: {
-      href: 'https://github.com/javandresmoreno/zzardin',
-      label: 'github.com/javandresmoreno/zzardin',
-    },
-    logo: logoZzardin,
-  },
-  {
-    name: 'Arroz Paisa Rexton',
-    description:
-      'Digital Menu Project for restaurant. Responsive for mobiles. +2000 active users, HTML, CSS3 and JS',
-    link: {
-      href: 'https://arrozpaisarexton.com/',
-      label: 'arrozpaisarexton.com',
-    },
-    logo: logoArrozPaisaRexton,
-  },
-  {
-    name: 'EventApp',
-    description:
-      'Event creation project elaborated with the MERN stack, user login, choice of templates and administration dashboard. UI design of the application. Award-winning educational project. Figma and Adobe XD.',
-    link: {
-      href: 'https://xd.adobe.com/view/2cb644e9-807c-4ab5-bf99-2db144f38b31-79e5/?fullscreen',
-      label: 'Mockup developed with Adobe XD',
-    },
-    logo: logoEventApp,
-  },
-  {
-    name: 'IP Address & Domain Tracker',
-    description:
-      "Project to consume the geo.ipify.org/ API's, displaying the information entered in a map provided by the LeafletJs API. IP Addresses and Domains Query App",
-    link: {
-      href: 'https://ip-address-tracker-liart.vercel.app/',
-      label: 'ip-address-tracker-liart.vercel.app',
-    },
-    logo: logoFreelancer,
-  },
-  {
-    name: 'Pai',
-    description: 'HTML5 and CSS3 Layout exercise. Responsive design',
-    link: {
-      href: 'https://javandresmoreno.github.io/pai-subscriptions/',
-      label: 'pai-subscriptions',
-    },
-    logo: logoPai,
-  },
-]
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -83,16 +23,71 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the tech universe.',
-}
-
 export default function Projects() {
+  const { t } = useTranslation()
+
+  const projects = [
+    {
+      name: t('projects.cvPlast.name'),
+      description: t('projects.cvPlast.description'),
+      link: {
+        href: t('projects.cvPlast.link.href'),
+        label: t('projects.cvPlast.link.label'),
+      },
+      logo: logoCVPlast,
+    },
+    {
+      name: t('projects.zzardin.name'),
+      description: t('projects.zzardin.description'),
+      link: {
+        href: t('projects.zzardin.link.href'),
+        label: t('projects.zzardin.link.label'),
+      },
+      logo: logoZzardin,
+    },
+    {
+      name: t('projects.arrozPaisaRexton.name'),
+      description: t('projects.arrozPaisaRexton.description'),
+      link: {
+        href: t('projects.arrozPaisaRexton.link.href'),
+        label: t('projects.arrozPaisaRexton.link.label'),
+      },
+      logo: logoArrozPaisaRexton,
+    },
+    {
+      name: t('projects.eventApp.name'),
+      description: t('projects.eventApp.description'),
+      link: {
+        href: t('projects.eventApp.link.href'),
+        label: t('projects.eventApp.link.label'),
+      },
+      logo: logoEventApp,
+    },
+    {
+      name: t('projects.pai.name'),
+      description: t('projects.pai.description'),
+      link: {
+        href: t('projects.pai.link.href'),
+        label: t('projects.pai.link.label'),
+      },
+      logo: logoPai,
+    },
+    
+    {
+      name: t('projects.freelancer.name'),
+      description: t('projects.freelancer.description'),
+      link: {
+        href: t('projects.freelancer.link.href'),
+        label: t('projects.freelancer.link.label'),
+      },
+      logo: logoFreelancer,
+    },
+  ]
+
   return (
     <SimpleLayout
-      title="Some things I’ve done..."
-      intro="I’ve worked on variety of projects over the years but these are the ones that I’m most proud of. Although, some of them doesn't exist; others I'm working on them right now. Please, check out the code and contribute if you have ideas for how it can be improved."
+      title={t('projects.title')}
+      intro={t('projects.intro')}
     >
       <ul
         role="list"

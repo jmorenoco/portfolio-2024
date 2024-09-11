@@ -43,7 +43,7 @@ function Resume() {
       location: t('resume.pai.location'),
       title: t('resume.pai.title'),
       logo: logoPai,
-      start: '05/2021',
+      start: t('resume.pai.start'),
       end: {
         label: t('resume.pai.end.label'),
         dateTime: new Date().getFullYear().toString(),
@@ -53,6 +53,7 @@ function Resume() {
         t('resume.pai.achievements.1'),
         t('resume.pai.achievements.2'),
         t('resume.pai.achievements.3'),
+        t('resume.pai.achievements.4'),
       ],
     },
     {
