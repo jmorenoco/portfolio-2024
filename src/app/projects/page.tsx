@@ -72,13 +72,12 @@ export default function Projects() {
       },
       logo: logoPai,
     },
-    
     {
-      name: t('projects.freelancer.name'),
-      description: t('projects.freelancer.description'),
+      name: t('projects.ipAddressTracker.name'),
+      description: t('projects.ipAddressTracker.description'),
       link: {
-        href: t('projects.freelancer.link.href'),
-        label: t('projects.freelancer.link.label'),
+        href: t('projects.ipAddressTracker.link.href'),
+        label: t('projects.ipAddressTracker.link.label'),
       },
       logo: logoFreelancer,
     },

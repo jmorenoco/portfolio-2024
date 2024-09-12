@@ -75,44 +75,52 @@ i18n
           projects: {
             title: 'Some things I’ve done...',
             intro: 'I’ve worked on variety of projects over the years but these are the ones that I’m most proud of. Although, some of them doesn\'t exist; others I\'m working on them right now. Please, check out the code and contribute if you have ideas for how it can be improved.',
+            cvPlast: {
+              name: 'CV Plast S.A.S',
+              description: 'CV Plast will be an e-commerce for the sale of products from the agroindustry. Developed with NextJS, TailwindCSS, React, Zustand. Developing.',
+              link: {
+                href: 'https://github.com/javandresmoreno/cvplast',
+                label: 'cvplast.com',
+              }
+            },
+            zzardin: {
+              name: 'Zzardin International S.A.S',
+              description: 'E-commerce project for the sale of lingerie for women. Developed with React, MongoDB, NodeJS, Express and TailwindCSS. With payment gateway, user login and administration system. Not active currently.',
+              link: {
+                href: 'https://github.com/javandresmoreno/zzardin',
+                label: 'github.com/javandresmoreno/zzardin',
+              }
+            },
+            arrozPaisaRexton: {
+              name: 'Arroz Paisa Rexton',
+                description: 'Digital Menu for a restaurant. Responsive design. +2000 active users, HTML5, CSS3 and JavaScript',
+              link: {
+                href: 'https://arrozpaisarexton.com/',
+                label: 'arrozpaisarexton.com',
+              }
+            },
+            eventApp: {
+              name: 'EventApp',
+              description: 'Event creation project developed with MERN stack, user login, choice of templates and administration dashboard. UI design. Awarded-winning educational project. Figma and Adobe XD.',
+              link: {
+                href: 'https://xd.adobe.com/view/2cb644e9-807c-4ab5-bf99-2db144f38b31-79e5/?fullscreen',
+                label: 'Mockup developed with Adobe XD',
+              }
+            },
             pai: {
-              name: 'pai-subscriptions',
-              description: 'HTML5 and CSS3 Layout exercise. Responsive.',
+              name: 'Pai',
+              description: 'HTML5 and CSS3 Layout exercise. Responsive design.',
               link: {
                 href: 'https://javandresmoreno.github.io/pai-subscriptions/',
                 label: 'pai-subscriptions',
               }
             },
-            arrozPaisaRexton: {
-              name: 'arroz-paisa-rexton',
-              description: 'HTML5 and CSS3 Layout exercise. Responsive.',
-              link: {
-                href: 'https://javandresmoreno.github.io/arroz-paisa-rexton/',
-                label: 'arroz-paisa-rexton',
-              }
-            },
-            eventApp: {
-              name: 'event-app',
-              description: 'Event app with React and Firebase.',
-              link: {
-                href: 'https://javandresmoreno.github.io/event-app/',
-                label: 'event-app',
-              }
-            },
             ipAddressTracker: {
-              name: 'ip-address-tracker',
-              description: 'IP address tracker with React and IP Geolocation API.',
+              name: 'IP Address & Domain Tracker',
+              description: 'Project to consume the geo.ipify.org/API, displaying the information entered in a map provided by Leaflet.',
               link: {
-                href: 'https://javandresmoreno.github.io/ip-address-tracker/',
+                href: 'https://ip-address-tracker-liart.vercel.app/',
                 label: 'ip-address-tracker',
-              }
-            },
-            digitalMenu: {
-              name: 'digital-menu',
-              description: 'Digital menu for restaurants with React and Firebase.',
-              link: {
-                href: 'https://javandresmoreno.github.io/digital-menu/',
-                label: 'digital-menu',
               }
             },
           },
@@ -188,45 +196,52 @@ i18n
           projects: {
             title: 'Algunos proyectos que he hecho...',
             intro: 'He trabajado en varios proyectos a lo largo de los años, pero estos son los que me siento más orgulloso. Aunque algunos no existen, otros los estoy desarrollando en este momento. Por favor, revisa el código y contribuye si tienes ideas para mejorarlo.',
-            
+            cvPlast: {
+              name: 'CV Plast S.A.S',
+              description: 'CV Plast será una e-commerce para la venta de productos de la agroindustria. Desarrollado con NextJS, TailwindCSS, React, Zustand. En desarrollo.',
+              link: {
+                href: 'https://github.com/javandresmoreno/cvplast',
+                label: 'cvplast.com',
+              }
+            },
+            zzardin: {
+              name: 'Zzardin International S.A.S',
+              description: 'Fue un proyecto de comercio electrónico para la venta de ropa interior femenina. Desarrollado con React, MongoDB, NodeJS, Express y TailwindCSS. Con pasarela de pago, login de usuario y sistema de administración. No activo actualmente.',
+              link: {
+                href: 'https://github.com/javandresmoreno/zzardin',
+                label: 'github.com/javandresmoreno/zzardin',
+              }
+            },
+            arrozPaisaRexton: {
+              name: 'Arroz Paisa Rexton',
+              description: 'Menú digital para restaurantes. Diseño responsivo. +2000 usuarios activos, HTML5, CSS3 y JavaScript',
+              link: {
+                href: 'https://arrozpaisarexton.com/',
+                label: 'arrozpaisarexton.com',
+              }
+            },
+            eventApp: {
+              name: 'EventApp',
+              description: 'Proyecto de creación de eventos desarrollado con MERN stack, login de usuario, elección de templates y dashboard de administración. Diseño UI. Proyecto educativo ganador. Figma y Adobe XD.',
+              link: {
+                href: 'https://xd.adobe.com/view/2cb644e9-807c-4ab5-bf99-2db144f38b31-79e5/?fullscreen',
+                label: 'Mockup desarrollado con Adobe XD',
+              }
+            },
             pai: {
-              name: 'pai-subscriptions',
+              name: 'Pai',
               description: 'Ejercicio de diseño de HTML5 y CSS3. Responsivo.',
               link: {
                 href: 'https://javandresmoreno.github.io/pai-subscriptions/',
                 label: 'pai-subscriptions',
               }
             },
-            arrozPaisaRexton: {
-              name: 'arroz-paisa-rexton',
-              description: 'Ejercicio de diseño de HTML5 y CSS3. Responsivo.',
-              link: {
-                href: 'https://javandresmoreno.github.io/arroz-paisa-rexton/',
-                label: 'arroz-paisa-rexton',
-              }
-            },
-            eventApp: {
-              name: 'event-app',
-              description: 'Aplicación de eventos con React y Firebase.',
-              link: {
-                href: 'https://javandresmoreno.github.io/event-app/',
-                label: 'event-app',
-              }
-            },
             ipAddressTracker: {
-              name: 'ip-address-tracker',
-              description: 'Rastreador de IP con React y API de geolocalización.',
+              name: 'Rastreador de IP y dominio',
+              description: 'Proyecto para consumir la API de geo.ipify.org/, mostrando la información ingresada en un mapa proporcionado por Leaflet.',
               link: {
-                href: 'https://javandresmoreno.github.io/ip-address-tracker/',
+                href: 'https://ip-address-tracker-liart.vercel.app/',
                 label: 'ip-address-tracker',
-              }
-            },
-            digitalMenu: {
-              name: 'digital-menu',
-              description: 'Menú digital para restaurantes con React y Firebase.',
-              link: {
-                href: 'https://javandresmoreno.github.io/digital-menu/',
-                label: 'digital-menu',
               }
             },
           }
