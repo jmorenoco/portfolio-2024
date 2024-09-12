@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   },
   description:
     'Soy Javier, un desarrollador frontend cuyo objetivo es transformar ideas en aplicaciones web dinámicas y efectivas. Disfruto el proceso de convertir conceptos complejos en soluciones simples y elegantes. Además de mi pasión por la programación, corro y ando en bicicleta, actividades que me enseñan a mantenerme enérgico y resiliente frente a cualquier desafío.',
+  openGraph: {
+    images: [
+      {
+        url: '/images/avatar.png',
+      },
+    ],
+  },
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
