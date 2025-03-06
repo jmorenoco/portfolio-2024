@@ -37,7 +37,7 @@ export function Footer() {
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} {t('footer.copyright')}
                 <Link
-                  href={'https://x.com/javandresmoreno'}
+                  href={'https://x.com/jmorenoco'}
                   target="_blank"
                   className="px-2"
                 >

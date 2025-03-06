@@ -1,6 +1,6 @@
 {
-  "name": "javandresmoreno-portfolio",
-  "version": "0.1.0",
+  "name": "jmoreno.co-portfolio",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

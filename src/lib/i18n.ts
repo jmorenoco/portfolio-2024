@@ -79,7 +79,7 @@ i18n
               name: 'CV Plast S.A.S',
               description: 'CV Plast will be an e-commerce for the sale of products from the agroindustry. Developed with NextJS, TailwindCSS, React, Zustand. Developing.',
               link: {
-                href: 'https://github.com/javandresmoreno/cvplast',
+                href: 'https://github.com/jmorenoco/cvplast',
                 label: 'cvplast.com',
               }
             },
@@ -87,8 +87,8 @@ i18n
               name: 'Zzardin International S.A.S',
               description: 'E-commerce project for the sale of lingerie for women. Developed with React, MongoDB, NodeJS, Express and TailwindCSS. With payment gateway, user login and administration system. Not active currently.',
               link: {
-                href: 'https://github.com/javandresmoreno/zzardin',
-                label: 'github.com/javandresmoreno/zzardin',
+                href: 'https://github.com/jmorenoco/zzardin',
+                label: 'github.com/jmorenoco/zzardin',
               }
             },
             arrozPaisaRexton: {
@@ -111,7 +111,7 @@ i18n
               name: 'Pai',
               description: 'HTML5 and CSS3 Layout exercise. Responsive design.',
               link: {
-                href: 'https://javandresmoreno.github.io/pai-subscriptions/',
+                href: 'https://jmorenoco.github.io/pai-subscriptions/',
                 label: 'pai-subscriptions',
               }
             },
@@ -200,7 +200,7 @@ i18n
               name: 'CV Plast S.A.S',
               description: 'CV Plast será una e-commerce para la venta de productos de la agroindustria. Desarrollado con NextJS, TailwindCSS, React, Zustand. En desarrollo.',
               link: {
-                href: 'https://github.com/javandresmoreno/cvplast',
+                href: 'https://github.com/jmorenoco/cvplast',
                 label: 'cvplast.com',
               }
             },
@@ -208,8 +208,8 @@ i18n
               name: 'Zzardin International S.A.S',
               description: 'Fue un proyecto de comercio electrónico para la venta de ropa interior femenina. Desarrollado con React, MongoDB, NodeJS, Express y TailwindCSS. Con pasarela de pago, login de usuario y sistema de administración. No activo actualmente.',
               link: {
-                href: 'https://github.com/javandresmoreno/zzardin',
-                label: 'github.com/javandresmoreno/zzardin',
+                href: 'https://github.com/jmorenoco/zzardin',
+                label: 'github.com/jmorenoco/zzardin',
               }
             },
             arrozPaisaRexton: {
@@ -232,7 +232,7 @@ i18n
               name: 'Pai',
               description: 'Ejercicio de diseño de HTML5 y CSS3. Responsivo.',
               link: {
-                href: 'https://javandresmoreno.github.io/pai-subscriptions/',
+                href: 'https://jmorenoco.github.io/pai-subscriptions/',
                 label: 'pai-subscriptions',
               }
             },
